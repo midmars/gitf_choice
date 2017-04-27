@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>簽到表</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Graduation Dinner</h1>
+            <h3>Information Management 32nd</h3>
+        
+            <a href="#Identity" class="btn btn-dark btn-lg">Sign In</a>
+        </div>
+    </header>
+
+    <!-- Identity -->
+    <section id="Identity" class="identity">
+        <div class="container">
+            <div class="row">
+                <h3 class="h3_chg">Choose Your ID.</h3>
+                    <form>
+                    <div class="id_btn col-md-3 col-md-push-2">
+                        <a href="#Data"><img src="img/icon_student.png"></a>
+                        <h2>Student</h2>
+                    </div>
+                    <div class="id_btn col-md-3 col-md-push-4">
+                        <a href="#Data"><img src="img/icon_teacher.png" ></a>
+                        <h2>Professor</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+
+    <!-- Data -->
+    <section id="Data" class="identity">
+        <div class="container">
+            <div class="row">
+                <h3 class="h3_chg">Enter Your Name.</h3>
+                    <input class="col-md-6 col-md-push-2 inputtext" type="text" placeholder="my name is...">
+                    <a href="#Checkin" type="submit" class="btn btn-light btn-lg btn_submit">Sign In</a>
+                    </form>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+
+    <!-- Checkin -->
+    <section id="Checkin" class="checkin">
+        <div class="container">
+            <div class="row">
+                <h3 class="h3_chg">Who is Here ?</h3>
+                <div class="col-md-6">
+                    <h3>Student</h3>
+                    <table class="table table-hover">
+                        <thead class="">
+                            <tr>
+                              <th></th>
+                              <th>Class</th>
+                              <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>甲</td>
+                              <td>陳耕霈</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>乙</td>
+                              <td>鄭雨停</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td>乙</td>
+                              <td>柯非比</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>乙</td>
+                              <td>何雪莉</td>
+                            </tr>
+                            <tr>
+                              <td>5</td>
+                              <td>乙</td>
+                              <td>葉克斯</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <h3>Teacher</h3>
+                    <table class="table table-hover">
+                        <thead class="">
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>陳耕霈</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>鄭雨停</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>柯非比</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
