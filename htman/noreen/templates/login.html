@@ -1,0 +1,148 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+	<head>
+		{% include "quote.html"%}
+		<script type='text/javascript' src="{% static 'js_noreen/login_main.js' %}"></script>
+		<title>電影與精神心理健康 | 首頁</title>
+	</head>
+
+
+	<!-- body classes: 
+			"boxed": boxed layout mode e.g. <body class="boxed">
+			"pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> 
+	-->
+	<body class="boxed pattern-5">
+
+		<!-- background image -->
+		<div class="fullscreen-bg"></div>
+
+		<!-- page wrapper start -->
+		<!-- ================ -->
+		<div class="page-wrapper">
+
+			<!-- main-container start -->
+			<!-- ================ -->
+			<section class="main-container light-translucent-bg">
+				
+				<div class="container">
+					<div class="row">
+
+						<!-- main start -->
+						<!-- ================ -->
+						<div class="main col-md-8 col-md-offset-2">
+
+							<!-- logo -->
+							<div class="logo">
+								<a href="/noreen/"><img id="logo" width="120px"  height="100px" src={% static "images/MHS.png" %} alt="iDea"></a>
+							</div>
+
+							<!-- name-and-slogan -->
+							<div class="site-slogan">
+								Mentality  &amp; Health Survey
+							</div>
+
+							<div class="object-non-visible" data-animation-effect="fadeInDownSmall" data-effect-delay="300">
+								<div class="form-block center-block">
+									<h2 class="title">START TEST</h2>
+									<hr>
+									<form class="form-horizontal" id ="login_form">
+										<div class="form-group has-feedback">
+											<label for="inputUserName" class="col-sm-3 control-label">測驗者名稱</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" name='member_name' placeholder="User Name"  required>
+												<i class="fa fa-user form-control-feedback"></i>
+											</div>
+										</div>
+
+										
+									</form>
+									<center>
+										<button  class="btn btn-group btn-default btn-sm" id="member_submit">START</button>
+									</center>
+									
+
+
+								</div>
+
+
+								
+							</div>
+							<br>
+							
+							<h6 class="text-center title" ><font color="#ABABAB">
+							*邊緣性人格評量,級數愈高代表邊緣性人格程度愈嚴重,建議第三級以上作心理諮商.<br>
+							*嚴重 需要立即作心理諮詢<br>
+							*中度 建議做短期心理諮詢
+
+							</h6></font>
+							
+
+
+						</div>
+						<!-- main end -->
+					
+
+					</div>
+						<br>
+						
+						<table class="table table-striped">
+							<thead>
+							    <tr>
+							    	<th >排名</th>
+							        <th >測驗者</th>
+							        <th >分數</th>
+							        <th >憂鬱指數</th>
+							        <th >焦慮指數</th>
+
+							        <th >邊緣性人格評量</th>
+							        <th >測驗日期</th>
+
+
+							        
+							                                                        
+							    </tr>
+							</thead>
+							<tbody>
+								{% for member in member%}
+							    
+							    <tr>
+							        <td >{{member.member_rank}}</td>
+							        <td >{{member.member_name}}</td>
+							        <td >{{member.value_sum}}</td>
+							        <td >{{member.result_depression}}</td>
+							        <td >{{member.result_anxiety}}</td>
+							        <td >{{member.result_edge}}</td>
+							        <td >{{member.test_date}}</td>
+							        
+							       
+							    </tr>
+							    {% endfor %}
+
+							   
+							    
+							</tbody>
+
+						</table>
+				</div>
+			<center>
+			<br>
+			本測驗資料參考自:羅吉斯心理諮詢所http://www.rogersc.com/check.php
+		</center>
+
+
+
+			</section>
+			<!-- main-container end -->
+			
+
+		</div>
+		<!-- page-wrapper end -->
+
+	
+	</body>
+</html>
